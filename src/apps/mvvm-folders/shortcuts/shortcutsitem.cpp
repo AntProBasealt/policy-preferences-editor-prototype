@@ -24,7 +24,6 @@
 
 namespace mvvm_folders
 {
-
 ShortcutsItem::ShortcutsItem()
     : ModelView::CompoundItem("ShortcutsItem")
 {
@@ -35,7 +34,6 @@ ShortcutsItem::ShortcutsItem()
     addProperty(TARGET_PATH, "");
     addProperty(ARGUMENTS, "");
     addProperty(START_IN, "");
-//    addProperty(SHORTCUT_KEY, QKeySequence());
     addProperty(SHORTCUT_KEY, "");
     addProperty(WINDOW, "");
     addProperty(COMMENT, "");
@@ -46,19 +44,18 @@ ShortcutsItem::ShortcutsItem()
 ShortcutsItem::ShortcutsItem(const ShortcutsItem &other)
     : ModelView::CompoundItem("ShortcutsItem")
 {
-    addProperty(ACTION, other.property<QString>(ACTION));
-    addProperty(PIDL, other.property<QString>(PIDL));
-    addProperty(SHORTCUT_PATH, other.property<QString>(SHORTCUT_PATH));
-    addProperty(TARGET_TYPE, other.property<QString>(TARGET_TYPE));
-    addProperty(TARGET_PATH, other.property<QString>(TARGET_PATH));
-    addProperty(ARGUMENTS, other.property<QString>(ARGUMENTS));
-    addProperty(START_IN, other.property<QString>(START_IN));
-//    addProperty(SHORTCUT_KEY, other.property<QKeySequence>(SHORTCUT_KEY));
-    addProperty(SHORTCUT_KEY, other.property<QString>(SHORTCUT_KEY));
-    addProperty(WINDOW, other.property<QString>(WINDOW));
-    addProperty(COMMENT, other.property<QString>(COMMENT));
-    addProperty(ICON_PATH, other.property<QString>(ICON_PATH));
-    addProperty(ICON_INDEX, other.property<QString>(ICON_INDEX));
+    addProperty(ACTION, other.property<std::string>(ACTION));
+    addProperty(PIDL, other.property<std::string>(PIDL));
+    addProperty(SHORTCUT_PATH, other.property<std::string>(SHORTCUT_PATH));
+    addProperty(TARGET_TYPE, other.property<std::string>(TARGET_TYPE));
+    addProperty(TARGET_PATH, other.property<std::string>(TARGET_PATH));
+    addProperty(ARGUMENTS, other.property<std::string>(ARGUMENTS));
+    addProperty(START_IN, other.property<std::string>(START_IN));
+    addProperty(SHORTCUT_KEY, other.property<std::string>(SHORTCUT_KEY));
+    addProperty(WINDOW, other.property<std::string>(WINDOW));
+    addProperty(COMMENT, other.property<std::string>(COMMENT));
+    addProperty(ICON_PATH, other.property<std::string>(ICON_PATH));
+    addProperty(ICON_INDEX, other.property<std::string>(ICON_INDEX));
 }
 
-}
+} // namespace mvvm_folders
